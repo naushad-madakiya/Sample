@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolVersion
+    defaultConfig {
+        applicationId "com.android.githubsampleandroid"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.compileSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-debug'
+
+            buildConfigField "String", "BASE_URL", "\"https://api.github.com\"";
+
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile rootProject.ext.libraries.appCompat
+    compile rootProject.ext.libraries.androidSupport
+    compile rootProject.ext.libraries.designSupport
+    compile rootProject.ext.libraries.constraintLayout
+
+    compile rootProject.ext.libraries.butterKnife
+    annotationProcessor rootProject.ext.aptLibraries.butterKnifeCompiler
+
+    compile rootProject.ext.libraries.retrofit
+    compile rootProject.ext.libraries.retrofitConverter
+    compile rootProject.ext.libraries.rxJava
+    compile rootProject.ext.libraries.rxandroid
+    compile rootProject.ext.libraries.rx2adapter
+
+    compile rootProject.ext.libraries.dagger
+    annotationProcessor rootProject.ext.aptLibraries.daggerCompiler
+    compile rootProject.ext.libraries.daggerAndroid
+    annotationProcessor rootProject.ext.aptLibraries.androidProcessor
+}
