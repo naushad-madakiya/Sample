@@ -50,9 +50,11 @@ dependencies {
     compile rootProject.ext.libraries.rxJava
     compile rootProject.ext.libraries.rxandroid
     compile rootProject.ext.libraries.rx2adapter
+    compile rootProject.ext.libraries.okHttpInterceptor
 
     compile rootProject.ext.libraries.dagger
     annotationProcessor rootProject.ext.aptLibraries.daggerCompiler
     compile rootProject.ext.libraries.daggerAndroid
     annotationProcessor rootProject.ext.aptLibraries.androidProcessor
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

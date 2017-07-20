@@ -6,12 +6,13 @@ ext {
     //Android
     androidSupportVersion = "26.0.0-alpha1"
     butterKnifeVersion = "8.7.0"
-    constraintLyaoutVersion = "1.0.2"
+    constraintLayoutVersion = "1.0.2"
     retrofitVersion = "2.3.0"
     retrofitConverterVersion = "2.1.0"
     rxJavaVersion = "2.0.2"
     rxAndroidVersion = "2.0.1"
     rx2AdapterVersion = "1.0.0"
+    okHttpVersion = "3.8.1"
     daggerVersion = "2.10"
 
     libraries = [
@@ -19,13 +20,15 @@ ext {
             appCompat        : "com.android.support:appcompat-v7:${androidSupportVersion}",
             designSupport    : "com.android.support:design:${androidSupportVersion}",
             butterKnife      : "com.jakewharton:butterknife:${butterKnifeVersion}",
-            constraintLayout : "com.android.support.constraint:constraint-layout:${constraintLyaoutVersion}",
+            constraintLayout : "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
 
             retrofit         : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
             retrofitConverter: "com.squareup.retrofit2:converter-gson:${retrofitConverterVersion}",
             rxJava           : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             rxandroid        : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
             rx2adapter       : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:${rx2AdapterVersion}",
+            okHttpInterceptor: "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+
 
             dagger           : "com.google.dagger:dagger:${daggerVersion}",
             daggerAndroid    : "com.google.dagger:dagger-android:${daggerVersion}"
